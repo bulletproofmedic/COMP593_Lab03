@@ -41,14 +41,24 @@ def main():
                 'genre': 'Action'
             },
             {
-                'title': 'Jason Bourne',
-                'genre': 'Action'
+                'title': 'Star Wars',
+                'genre': 'Science Fiction'
             }
 
         ]
     }
 
-    info['favorite_movies'].append({'title': 'John Wick', 'genre': 'action'})
+# Add a new movie
+    def new_movie():
+        info['favorite_movies'].append({'title': 'Harry Potter', 'genre': 'Adventure'})
+    new_movie()
+
+# Print topping list
+    def print_topping():
+        print(f'My favorite pizza toppings are:')
+        for topping in info['favorite_pizza_toppings']:
+            print(f'- {topping}')
+    #print_topping()
 
 # Add new toppings
     new_toppings = ('bacon', 'extra cheese')
@@ -57,21 +67,50 @@ def main():
     
     add_toppings(info, new_toppings)
 
-# Sort and uncapitalize
+# Sort and uncapitalize. Yes, that's a word. I just made it up.
     def sort_uncapitalize():
-            info['favorite_pizza_toppings'].sort()
             for a,t in enumerate(info['favorite_pizza_toppings']):
                 info['favorite_pizza_toppings'][a] = t.lower()
-            #[b] = list.sort(info['favorite_pizza_toppings'])
-            #info['favorite_pizza_toppings'].pop(0)
-            # I thought the sort function was adding a None object to my list so I
-            # tried popping it. Then I realized that it was actually converting
-            # bacon to a None object. I can't figure out why.
+            
+            info['favorite_pizza_toppings'].sort()
             return
     
     sort_uncapitalize()
 
-    print(info['favorite_pizza_toppings'])
+# Print topping list again
+    #print_topping()
 
+# Print name and ID
+    def name(name):
+        print(f"My name is {info['full_name']} - but you can call me Agent {info['full_name'].split(',')[0]}.")
+        print('My student ID is ', info['student_id'], '.', sep='')
+
+    name(info)
+    #print(info['favorite_pizza_toppings'])
+
+# Create a list of movie genres
+    def genre(type):
+        list = info['favorite_movies']
+        print(f"I like to watch {list[0]['genre'].lower()}, {list[1]['genre'].lower()}, and {list[2]['genre'].lower()} movies.")
+    genre(info)
+
+# Print favorite movie list
+    def movies(list):
+        list = info['favorite_movies']
+        movies = []
+        i = 0
+        while i <= len(list):
+            for movie in list[i]['title']:
+                movies.extend(movie)
+                i += 1
+        print(movies)
+        #print(f"Some of my favorite movies are {list[0]['title'].title()}, {list[1]['title'].title()}, and {list[2]['title'].title()}")
+    #movies(info)
+    movies(info)
 # Main function call
 main()
+
+# print ('some of my favorite movies are')
+# for movie in list:
+#     print['title'].title()
+#
