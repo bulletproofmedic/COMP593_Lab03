@@ -8,20 +8,13 @@
 #       python script.py
 #
 #   Parameters:
-#       Filename - Path to the .csv file
+#       None
 #
 #   History:
 #   Date        Author      Description
 #   2022-06-24  A. Walker   Initial Creation
 #-----------------------------------------------------
 
-#
-# #
-# #
-# # Come back to header to check params
-# #
-# #
-#
 
 # Main function definition
 def main():
@@ -53,12 +46,19 @@ def main():
         info['favorite_movies'].append({'title': 'Harry Potter', 'genre': 'Adventure'})
     new_movie()
 
+# Print name and ID
+    def name(name):
+        print(f"My name is {info['full_name']} - but you can call me Agent {info['full_name'].split(',')[0]}.")
+        print('My student ID is ', info['student_id'], '.', sep='')
+        print('\n')
+    name(info)
+
 # Print topping list
     def print_topping():
         print(f'My favorite pizza toppings are:')
         for topping in info['favorite_pizza_toppings']:
             print(f'- {topping}')
-    #print_topping()
+    print_topping()
 
 # Add new toppings
     new_toppings = ('bacon', 'extra cheese')
@@ -78,20 +78,15 @@ def main():
     sort_uncapitalize()
 
 # Print topping list again
-    #print_topping()
-
-# Print name and ID
-    def name(name):
-        print(f"My name is {info['full_name']} - but you can call me Agent {info['full_name'].split(',')[0]}.")
-        print('My student ID is ', info['student_id'], '.', sep='')
-
-    name(info)
-    #print(info['favorite_pizza_toppings'])
+    print('\n')
+    print_topping()
+    print('\n')
 
 # Create a list of movie genres
     def genre(type):
         list = info['favorite_movies']
         print(f"I like to watch {list[0]['genre'].lower()}, {list[1]['genre'].lower()}, and {list[2]['genre'].lower()} movies.")
+        print('\n')
     genre(info)
 
 # Print favorite movie list
