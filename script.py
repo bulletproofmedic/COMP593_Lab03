@@ -95,22 +95,40 @@ def main():
     genre(info)
 
 # Print favorite movie list
-    def movies(list):
+    def movies(movies_list):
         list = info['favorite_movies']
-        movies = []
         i = 0
-        while i <= len(list):
-            for movie in list[i]['title']:
-                movies.extend(movie)
-                i += 1
-        print(movies)
-        #print(f"Some of my favorite movies are {list[0]['title'].title()}, {list[1]['title'].title()}, and {list[2]['title'].title()}")
-    #movies(info)
+        print(f"Some of my favorite movies are {list[0]['title'].title()}, {list[1]['title'].title()}, and {list[2]['title'].title()}.")
     movies(info)
+        
+##############################
+#   Attempts to iterate through list of dictionaries to make sure the function
+#   could work regardless of the size of list. Failed.
+#   But at least I got the Oxford comma in there!
+#
+##############################
+#
+#        for dict in list:
+#            for key, value in dict:
+#                print(dict[key])
+#
+##############################
+#
+#        while i <= len(list):
+#            for movie.value() in list[i]:
+#                movies.extend(movie)
+#                print(movie)
+#                i += 1
+#        print(movies)
+#
+##############################
+#
+#        print ('some of my favorite movies are')
+#        for movie in list:
+#            print['title'].title()
+#
+##############################
+
+
 # Main function call
 main()
-
-# print ('some of my favorite movies are')
-# for movie in list:
-#     print['title'].title()
-#
